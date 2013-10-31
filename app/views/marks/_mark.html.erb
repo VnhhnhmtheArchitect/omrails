@@ -1,6 +1,9 @@
 <tr>
 	<td><%= mark.description %></td>
 	<td><%= link_to 'Show', mark %></td>
-	<td><%= link_to 'Edit', edit_mark_path(mark) %></td>
-	<td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% if current_user == mark.user %>
+		<td><%= link_to 'Edit', edit_mark_path(mark) %></td>
+		<td><%= link_to 'Destroy', mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
+
 </tr>

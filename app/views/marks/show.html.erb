@@ -4,7 +4,12 @@
 			<p>
 	  		<%= @mark.description %>
 			</p>
+			<p>
+	  		<%= @mark.user.name %>
+			</p>
+			<% if current_user == @mark.user %>
 			<%= link_to 'Edit', edit_mark_path(@mark) %>
+			<% end %>
 			<%= link_to 'Back', marks_path %>
 		</div>
 	</div>
